@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and linked to EduFlow by the end of the day.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided.
+- To test the page, just open it with your default browser.
+- Use Bootstrap4.6 classes to render the page.
+- Use containers, rows and cols in order to achieve a great responsive layout.
+
+ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you'd have a short biography section of yourself, and the top albums of your life, 
+the worst album you ever listened to and everything related to the music you love.
+
+NOTE:
+Most of the times, even the most expert of designers need inspiration.
+Spend 30 minutes surfing the web and searching the best way of rapresenting the album you love the most.
+Could be the Amazon way, the Spotify or Apple music way or some other blog out there.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+
+    <style>
+      body{
+        background-color: #050505;
+      }
+      h2{
+        color:#FFFFFF;
+        margin-bottom: 1em;
+      }
+      h3{
+        color: #ebebeb;
+        font-size:20px;
+      }
+      h4{
+        color:#383838;
+        font-size: 16px;
+      }
+      p{
+        color:#ebebeb;
+      }
+      li{
+        color: #ebebeb;
+      }
+      .AlbumInfo{
+        margin-top:1em;
+        text-align: center;
+      }
+      .navcolor{
+        background-color: #000000;
+      }
+      .navbarlogo{
+        max-width: 60px;
+        margin-right: 10px;
+      }
+      .navbartitle{
+        font-size:1.5em;
+        font-weight:bold;
+        color:#FFFFFF;
+      }
+      .AlbumContainer{
+
+      }
+      .AlbumCover{
+        border-radius:50%;
+        padding:20%;
+        background-color: #000000;
+        max-width:80%;
+        margin:auto;
+        text-align: center;
+        box-shadow: 4px 8px 16px #1d1d1d;
+        display: block;
+      }
+      .AlbumCover2{
+        max-width:100%;
+        margin:auto;
+        text-align: center;
+        box-shadow: 4px 8px 16px #1d1d1d;
+        display: block;
+        border-radius: 8px;
+      }
+      .ArtistImage{
+        max-width: 100%;
+        box-shadow: 4px 8px 16px #1d1d1d;
+        border-radius: 8px;
+
+      }
+      footer{
+        background-color: #000000;
+      }
+      .footertitle{
+        padding-top:2em;
+      }
+      .spacebottom{
+        margin-bottom:60px;
+      }
+      /* EXERCISE 1
+            For all Albums we'd like to have a consistent style.
+            Create a class for:
+            - The album container
+            - The album cover
+            - The album title
+            - The album group / singer / dj
+            - The album genre
+            - The album duration
+            - etc
+         */
+    </style>
+  </head>
+  <body>
+    <!-- EXERCISE 2 
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must link every section in your page
+        -->
+      <div class="spacebottom">
+        <nav class="navbar navbar-expand-lg navbar-light navcolor">
+          <div class="container">
+            <a class="navbar-brand" href="#"><span><img src="Img/favicon.ico" class="navbarlogo"></span><span class="navbartitle">Strivify</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+        
+    <!-- EXERCISE 3
+            Create a responsive section for your favourite albums.
+            In this section you should have:
+            - 4 albums per row when the screen is very large
+            - 3 albums per row when you are on a tablet (or a smaller viewport)
+            - 2 albums per row when you are on a small screen
+        -->
+        <div class="container">
+        
+          <div class="spacebottom">
+            <div>
+              <h2>Some of my Favourite Albums</h2>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/Highway 61.PNG" alt="Album Highway 61">
+                <div class="AlbumInfo">
+                  <h3>Highway 61</h3>
+                  <h4>Bob Dilan</h4>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/Out Of Our Heads.PNG" alt="Album Out of Our Heads">
+                <div class="AlbumInfo">
+                  <h3>Out Of Our Heads</h3>
+                  <h4>Rolling Stones</h4>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/The Dock Of the Bay.PNG" alt="Album The Dock of The Bay">
+                <div class="AlbumInfo">
+                  <h3>The Dock Of The Bay</h3>
+                  <h4>Otis Redding</h4>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+                <div class="AlbumInfo">
+                  <h3>Exodus</h3>
+                  <h4>Bob Marley</h4>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/I Never Loved A Man The Way I Love You - Aretha.PNG" alt="Album I Never Loved A Man The Way I Love You">
+                <div class="AlbumInfo">
+                  <h3>I Never Loved A Man The Way I Love You</h3>
+                  <h4>Aretha Francklin</h4>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/Just As I Am.PNG" alt="Album Just As I Am">
+                <div class="AlbumInfo">
+                  <h3>Just As I Am</h3>
+                  <h4>Bill Withers</h4>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/Axis- Bold As Love - Jimi Hendrix.PNG" alt="Album Axis:Bold As Love">
+                <div class="AlbumInfo">
+                  <h3>Axis: Bold As Love</h3>
+                  <h4>Jimi Hendrix</h4>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                <img class="AlbumCover" src="Img/Abbey Road.PNG" alt="Album Abbey Road">
+                <div class="AlbumInfo">
+                  <h3>Abbey Road</h3>
+                  <h4>The Beatles</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+    <!-- EXERCISE 4
+            Create a section for the album reviews.
+            Pick one of your fav albums, and create a section with:
+            - Cover
+            - Title
+            - Band
+            - Duration
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+        <div class="spacebottom">
+          <div>
+            <h2>Highlighted</h2>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+              <img class="AlbumCover" src="Img/Cold Facts.PNG" alt="Album Cold Facts">
+            </div>
+            <div class="col-12 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+              <div>
+                <h2>Cold Facts</h2>
+                <h3>Rodriguez</h3>
+                <p>37 minutes</p>
+                <ol>
+                  <li>Sugar Man</li>
+                  <li>Only Good For Conversation</li>
+                  <li>Crucify Your Mind</li>
+                  <li>This Is Not A Song, It's An Outburst: The Establishment Blues</li>
+                  <li>Hate Street Dialogues</li>
+                  <li>Forget It</li>
+                  <li>Inner City Blues</li>
+                  <li>I Wonder</li>
+                  <li>...</li>            
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- EXERCISE 5
+            Worst album list! Find out the music you don't really like or you find overrated and list it
+            in this "hall of shame" chart!
+        -->
+        <div class="spacebottom">
+          <div>
+            <h2>Hall Of Shame</h2>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+              <img class="AlbumCover" src="Img/Television.PNG" alt="Album Television">
+            </div>
+            <div class="col-12 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+              <div>
+                <h2>Television</h2>
+                <h3>Paola & Chiara</h3>
+                <p>1 hour 2 minutes</p>
+                <ol>
+                  <li>Vamos A Bailar</li>
+                  <li>Amoremidai</li>
+                  <li>Anni Luce</li>
+                  <li>Buona Stella</li>
+                  <li>Viky - Spanish Version</li>
+                  <li>Tu Sei Per Me - Rapino Brothers Mix</li>
+                  <li>Arsenico</li>
+                  <li>Viva El Amor - Radio Edit</li>
+                  <li>...</li>            
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are a fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+        <div class="spacebottom">
+          <div>
+            <h2>Some Of The Greats</h2>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <img class="ArtistImage" src="Img/luciodalla.jpg" alt="Lucio Dalla">
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <div>
+                <h2>Lucio Dalla</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ea aliquam quasi. Voluptatibus ad suscipit ex tempore? Ad quidem distinctio perferendis veritatis? Necessitatibus dicta, incidunt atque ab commodi molestiae voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto velit error deserunt praesentium inventore enim nam, officia dolorem repellat dicta repellendus sed ipsam tenetur commodi sit quis ipsum vero dignissimos!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
+            Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
+        -->
+      <div class="spacebottom">
+        <div>
+          <h2>Just Covers</h2>
+        </div>
+        <div class="row">
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+          <div class="col-4 col-sm-4 cl-md-4 col-lg-3 col-xl-2 mb-5">
+            <img class="AlbumCover2" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+          </div>
+        </div>
+      </div>
+
+    <!-- EXERCISE 8
+            Implement a footer with some information / social links
+        -->
+
+        <footer>
+          <h2 class="footertitle">Strivify</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae cupiditate libero voluptatum, quos eveniet non assumenda repudiandae ipsa cumque, harum perferendis beatae excepturi impedit ab aperiam possimus neque tempore vel.</p>
+          <ul>
+            <li><i class="fab fa-github-square"></i></li>
+            <li><i class="fab fa-linkedin"></i></li>
+            <li><i class="fab fa-facebook-square"></i></li>
+          </ul>
+        </footer>
+    <!-- EXTRA:
+            EXERCISE 9
+            Create an album details area that is going to be toggled on and off by clicking on the album image
+        -->
+
+    <!-- EXERCISE 10
+            Add a button to each section. By clicking on it the section body appears (if hidden) or disappears (if visible) 
+            (hint: look for a boostrap component that can handle the job for you. You can always rely on DOM manipulation if you can't find it)
+        -->
+
+    <!--
+         EXERCISE 11
+            Add in the footer a field that counts, on page load, how many ALBUMS there are on the page 
+        -->
+      </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
