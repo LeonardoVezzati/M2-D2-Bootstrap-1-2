@@ -105,6 +105,45 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
       .spacebottom{
         margin-bottom:60px;
       }
+      .rotate:hover{
+        -webkit-animation: spin 2s linear infinite;
+        -moz-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
+      @-webkit-keyframes spin{
+        100%{-webkit-transform: rotate(360deg);}
+      }
+      @-moz-keyframes spin{
+        100%{-webkit-transform: rotate(360deg);}
+      }
+      @keyframes spin{
+        100%{-webkit-transform: rotate(360deg);}
+      }
+
+      .nav-link{
+        color:#FFFFFF;
+      }
+      .bannerimage{
+        max-width: 100%;
+        padding-top:10%;
+        padding-bottom:10%;
+        text-align: center;
+      }
+      .bannersection{
+        background-color: #00ff84;
+      }
+      .bannertitlecontainer{
+        margin-left: 30px;
+        padding-top:10%;
+        padding-bottom:10%;
+      }
+      .bannertitle{
+        font-size:80px;
+      }
+      .bannersubtitle{
+        font-size: 26px;
+        font-weight: bold;
+      }
       /* EXERCISE 1
             For all Albums we'd like to have a consistent style.
             Create a class for:
@@ -123,7 +162,6 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             Implement a navigation bar using the bootstrap component
             This navigation bar must link every section in your page
         -->
-      <div class="spacebottom">
         <nav class="navbar navbar-expand-lg navbar-light navcolor">
           <div class="container">
             <a class="navbar-brand" href="#"><span><img src="Img/favicon.ico" class="navbarlogo"></span><span class="navbartitle">Strivify</span></a>
@@ -161,7 +199,6 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             </div>
           </div>
         </nav>
-      </div>
         
     <!-- EXERCISE 3
             Create a responsive section for your favourite albums.
@@ -170,71 +207,85 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - 3 albums per row when you are on a tablet (or a smaller viewport)
             - 2 albums per row when you are on a small screen
         -->
+        <div class="bannersection">
         <div class="container">
-        
-          <div class="spacebottom">
-            <div>
-              <h2>Some of my Favourite Albums</h2>
+          <div class="row" style="padding: 0;">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding: 0;">
+              <img class="bannerimage" src="Img/Background Vinyl Small.png" alt="Background Vinyl Strive School">
             </div>
-            <div class="row">
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/Highway 61.PNG" alt="Album Highway 61">
-                <div class="AlbumInfo">
-                  <h3>Highway 61</h3>
-                  <h4>Bob Dilan</h4>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/Out Of Our Heads.PNG" alt="Album Out of Our Heads">
-                <div class="AlbumInfo">
-                  <h3>Out Of Our Heads</h3>
-                  <h4>Rolling Stones</h4>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/The Dock Of the Bay.PNG" alt="Album The Dock of The Bay">
-                <div class="AlbumInfo">
-                  <h3>The Dock Of The Bay</h3>
-                  <h4>Otis Redding</h4>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
-                <div class="AlbumInfo">
-                  <h3>Exodus</h3>
-                  <h4>Bob Marley</h4>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/I Never Loved A Man The Way I Love You - Aretha.PNG" alt="Album I Never Loved A Man The Way I Love You">
-                <div class="AlbumInfo">
-                  <h3>I Never Loved A Man The Way I Love You</h3>
-                  <h4>Aretha Francklin</h4>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/Just As I Am.PNG" alt="Album Just As I Am">
-                <div class="AlbumInfo">
-                  <h3>Just As I Am</h3>
-                  <h4>Bill Withers</h4>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/Axis- Bold As Love - Jimi Hendrix.PNG" alt="Album Axis:Bold As Love">
-                <div class="AlbumInfo">
-                  <h3>Axis: Bold As Love</h3>
-                  <h4>Jimi Hendrix</h4>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
-                <img class="AlbumCover" src="Img/Abbey Road.PNG" alt="Album Abbey Road">
-                <div class="AlbumInfo">
-                  <h3>Abbey Road</h3>
-                  <h4>The Beatles</h4>
-                </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding: 0;">
+              <div class="bannertitlecontainer">
+                <h2 class="bannertitle">Welcome To Strivify!</h2>
+                <p class="bannersubtitle">The portal of Leonardo's preferred music</p>
               </div>
             </div>
           </div>
+        </div>
+        </div>
+        <div class="container">
+         
+          <section style="margin-top: -40px;">
+            <div class="spacebottom">
+              <div class="row">
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/Highway 61.PNG" alt="Album Highway 61">
+                  <div class="AlbumInfo">
+                    <h3>Highway 61</h3>
+                    <h4>Bob Dilan</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/Out Of Our Heads.PNG" alt="Album Out of Our Heads">
+                  <div class="AlbumInfo">
+                    <h3>Out Of Our Heads</h3>
+                    <h4>Rolling Stones</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/The Dock Of the Bay.PNG" alt="Album The Dock of The Bay">
+                  <div class="AlbumInfo">
+                    <h3>The Dock Of The Bay</h3>
+                    <h4>Otis Redding</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/Exodus - Bob Marley.PNG" alt="Album Exodus">
+                  <div class="AlbumInfo">
+                    <h3>Exodus</h3>
+                    <h4>Bob Marley</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/I Never Loved A Man The Way I Love You - Aretha.PNG" alt="Album I Never Loved A Man The Way I Love You">
+                  <div class="AlbumInfo">
+                    <h3>I Never Loved A Man The Way I Love You</h3>
+                    <h4>Aretha Francklin</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/Just As I Am.PNG" alt="Album Just As I Am">
+                  <div class="AlbumInfo">
+                    <h3>Just As I Am</h3>
+                    <h4>Bill Withers</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/Axis- Bold As Love - Jimi Hendrix.PNG" alt="Album Axis:Bold As Love">
+                  <div class="AlbumInfo">
+                    <h3>Axis: Bold As Love</h3>
+                    <h4>Jimi Hendrix</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 cl-md-4 col-lg-3 col-xl-3 mb-5">
+                  <img class="AlbumCover rotate" src="Img/Abbey Road.PNG" alt="Album Abbey Road">
+                  <div class="AlbumInfo">
+                    <h3>Abbey Road</h3>
+                    <h4>The Beatles</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
     <!-- EXERCISE 4
             Create a section for the album reviews.
             Pick one of your fav albums, and create a section with:
@@ -246,45 +297,48 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             - Tracklist
             - ... And whatever you think it's interesting about it!
         -->
-        <div class="spacebottom">
-          <div>
-            <h2>Highlighted</h2>
-          </div>
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-              <img class="AlbumCover" src="Img/Cold Facts.PNG" alt="Album Cold Facts">
+        <section>
+          <div class="spacebottom">
+            <div>
+              <h2>Highlighted</h2>
             </div>
-            <div class="col-12 col-sm-6 col-md-8 col-lg-8 col-xl-8">
-              <div>
-                <h2>Cold Facts</h2>
-                <h3>Rodriguez</h3>
-                <p>37 minutes</p>
-                <ol>
-                  <li>Sugar Man</li>
-                  <li>Only Good For Conversation</li>
-                  <li>Crucify Your Mind</li>
-                  <li>This Is Not A Song, It's An Outburst: The Establishment Blues</li>
-                  <li>Hate Street Dialogues</li>
-                  <li>Forget It</li>
-                  <li>Inner City Blues</li>
-                  <li>I Wonder</li>
-                  <li>...</li>            
-                </ol>
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                <img class="AlbumCover rotate" src="Img/Cold Facts.PNG" alt="Album Cold Facts">
+              </div>
+              <div class="col-12 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                <div>
+                  <h2>Cold Facts</h2>
+                  <h3>Rodriguez</h3>
+                  <p>37 minutes</p>
+                  <ol>
+                    <li>Sugar Man</li>
+                    <li>Only Good For Conversation</li>
+                    <li>Crucify Your Mind</li>
+                    <li>This Is Not A Song, It's An Outburst: The Establishment Blues</li>
+                    <li>Hate Street Dialogues</li>
+                    <li>Forget It</li>
+                    <li>Inner City Blues</li>
+                    <li>I Wonder</li>
+                    <li>...</li>            
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
     <!-- EXERCISE 5
             Worst album list! Find out the music you don't really like or you find overrated and list it
             in this "hall of shame" chart!
         -->
+      <section>
         <div class="spacebottom">
           <div>
             <h2>Hall Of Shame</h2>
           </div>
           <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-              <img class="AlbumCover" src="Img/Television.PNG" alt="Album Television">
+              <img class="AlbumCover rotate" src="Img/Television.PNG" alt="Album Television">
             </div>
             <div class="col-12 col-sm-6 col-md-8 col-lg-8 col-xl-8">
               <div>
@@ -306,34 +360,38 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             </div>
           </div>
         </div>
+      </section> 
     <!-- EXERCISE 6
             Do you have any musician / band you admire or you are a fan of?
             This section is dedicated to him / her / them!
             Feel free to experiment in this part of the page.
         -->
-        <div class="spacebottom">
-          <div>
-            <h2>Some Of The Greats</h2>
-          </div>
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-              <img class="ArtistImage" src="Img/luciodalla.jpg" alt="Lucio Dalla">
+        <section>
+          <div class="spacebottom">
+            <div>
+              <h2>Some Of The Greats</h2>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-              <div>
-                <h2>Lucio Dalla</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ea aliquam quasi. Voluptatibus ad suscipit ex tempore? Ad quidem distinctio perferendis veritatis? Necessitatibus dicta, incidunt atque ab commodi molestiae voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto velit error deserunt praesentium inventore enim nam, officia dolorem repellat dicta repellendus sed ipsam tenetur commodi sit quis ipsum vero dignissimos!</p>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <img class="ArtistImage" src="Img/luciodalla.jpg" alt="Lucio Dalla">
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div>
+                  <h2>Lucio Dalla</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore ea aliquam quasi. Voluptatibus ad suscipit ex tempore? Ad quidem distinctio perferendis veritatis? Necessitatibus dicta, incidunt atque ab commodi molestiae voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto velit error deserunt praesentium inventore enim nam, officia dolorem repellat dicta repellendus sed ipsam tenetur commodi sit quis ipsum vero dignissimos!</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
     <!-- EXERCISE 7
             Just covers!
             Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
             Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
         -->
-      <div class="spacebottom">
+      <section>       
+        <div class="spacebottom">
         <div>
           <h2>Just Covers</h2>
         </div>
@@ -394,15 +452,16 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
           </div>
         </div>
       </div>
+      </section>
 
     <!-- EXERCISE 8
             Implement a footer with some information / social links
         -->
       </div>
-
+      
         <footer>
           <div class="container">
-            <h2 class="footertitle">Strivify</h2>
+            <h2 class="footertitle"><span><img src="Img/favicon.ico" class="navbarlogo"></span>Strivify</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae cupiditate libero voluptatum, quos eveniet non assumenda repudiandae ipsa cumque, harum perferendis beatae excepturi impedit ab aperiam possimus neque tempore vel.</p>
             <ul style="padding-bottom: 60px;">
               <li><i class="fab fa-github-square"></i></li>
@@ -425,7 +484,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
          EXERCISE 11
             Add in the footer a field that counts, on page load, how many ALBUMS there are on the page 
         -->
-      
+    <script src="https://kit.fontawesome.com/cf8ccbb757.js" crossorigin="anonymous"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
